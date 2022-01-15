@@ -24,11 +24,14 @@ export class CreateComponent implements OnInit {
   onCreate(): void {
     this.foo = new Foo(-1, this.fooName);
     this.fooService.create(this.foo).subscribe(
-      data => {
-        console.log(data);
-        this.volver();
-      },
-      err => console.log(err)
+      {
+        next: (data) => {
+          console.log(data);
+          this.volver();
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
     );
   }
 

@@ -19,12 +19,13 @@ export class DetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id : number = this.activatedRoute.snapshot.params['id'];
+    const id: number = this.activatedRoute.snapshot.params['id'];
     this.fooService.detail(id).subscribe(
-      data => {
-        this.foo = data;
-      },
-      err => console.log(err)
+      {
+        next: (data) => this.foo = data,
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
     );
   }
 

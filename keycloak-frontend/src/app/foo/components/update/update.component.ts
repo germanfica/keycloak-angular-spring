@@ -19,17 +19,18 @@ export class UpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id : number = this.activatedRoute.snapshot.params['id'];
+    const id: number = this.activatedRoute.snapshot.params['id'];
     this.fooService.detail(id).subscribe(
-      data => {
-        this.foo = data;
-      },
-      err => console.log(err)
+      {
+        next: (data) => this.foo = data,
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
     );
   }
 
   onUpdate(): void {
-    const id : number = this.activatedRoute.snapshot.params['id'];
+    const id: number = this.activatedRoute.snapshot.params['id'];
     this.fooService.update(id, this.foo).subscribe(
       data => {
         console.log(data);

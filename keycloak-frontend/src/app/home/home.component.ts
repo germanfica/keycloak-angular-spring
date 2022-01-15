@@ -13,10 +13,13 @@ export class HomeComponent implements OnInit {
   constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.messageService.getMessage().subscribe( res => {
-      this.username = res[`text`];
-    },
-    err => console.log(err));
+    this.messageService.getMessage().subscribe(
+      {
+        next: (data) => this.username = data[`text`],
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
+    );
   }
 
 }

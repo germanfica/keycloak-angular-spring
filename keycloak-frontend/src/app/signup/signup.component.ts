@@ -24,11 +24,14 @@ export class SignupComponent implements OnInit {
   onRegister(): void {
     const user = new User(this.username, this.email, this.firstName, this.lastName, this.password);
     this.userService.create(user).subscribe(
-      data => {
-        console.log(data);
-        this.volver();
-      },
-      err => console.log(err)
+      {
+        next: (data) => {
+          console.log(data);
+          this.volver();
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
     );
   }
 
