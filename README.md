@@ -30,10 +30,9 @@ You can get access to the source code by using one of the following ways:
 git clone https://github.com/germanfica/keycloak-angular-spring-boot.git
 ```
 
-## Maven commands
+## NPM packages
 
-- `mvn clean`
-- `mvn clean install`
+- [angular-oauth2-oidc](https://www.npmjs.com/package/angular-oauth2-oidc)
 
 ## Maven dependencies
 
@@ -42,6 +41,27 @@ git clone https://github.com/germanfica/keycloak-angular-spring-boot.git
 - [Project Lombok](https://mvnrepository.com/artifact/org.projectlombok/lombok)
 - [Keycloak Spring Boot Default Starter](https://mvnrepository.com/artifact/org.keycloak/keycloak-spring-boot-starter)
 - [Keycloak Admin REST Client](https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client)
+
+## Maven commands
+
+- `mvn clean`
+- `mvn clean install`
+
+## Configure application properties
+
+Open `src/main/resources/application.properties`
+
+```
+server.port=8080
+
+# keycloak
+keycloak.realm = learning-platform
+keycloak.auth-server-url = http://localhost:8180/auth
+keycloak.ssl-required = external
+keycloak.resource = backend-client
+keycloak.use-resource-role-mappings = true
+keycloak.bearer-only = true
+```
 
 ## Keycloak Getting Started
 
