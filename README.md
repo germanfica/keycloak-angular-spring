@@ -39,6 +39,22 @@ git clone https://github.com/germanfica/keycloak-angular-spring-boot.git
 
 Get started with Keycloak. You can find this guide in the [official documentation](https://www.keycloak.org/getting-started/getting-started-zip).
 
+### Update default Keycloak port
+
+The default port is `8080`. Go to `standalone/configuration/standalone.xml` in the Keycloak installation folder and look for `jboss.http.port` attribute. We want to change the default port to `8180`.
+
+From this:
+
+```xml
+<socket-binding name="http" port="${jboss.http.port:8080}"/>
+```
+
+To this:
+
+```xml
+<socket-binding name="http" port="${jboss.http.port:8180}"/>
+```
+
 ### Start Keycloak
 
 From a terminal open the directory keycloak-16.1.0, then to start Keycloak run the following command.
