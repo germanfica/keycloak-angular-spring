@@ -39,6 +39,49 @@ git clone https://github.com/germanfica/keycloak-angular-spring-boot.git
 
 Get started with Keycloak. You can find this guide in the [official documentation](https://www.keycloak.org/getting-started/getting-started-zip).
 
+### Start Keycloak
+
+From a terminal open the directory keycloak-16.1.0, then to start Keycloak run the following command.
+
+On Linux run:
+
+```bash
+bin/standalone.sh
+```
+
+On Windows run:
+
+```bash
+bin/standalone.bat
+```
+
+### Create an admin user
+
+Keycloak does not come with a default admin user, which means before you can start using Keycloak you need to create an admin user.
+
+To do this open http://localhost:8080/auth, then fill in the form with your preferred username and password.
+
+### Login to the admin console
+
+Go to the [Keycloak Admin Console](http://localhost:8080/auth/admin) and login with the username and password you created earlier.
+
+### Create a realm
+
+A realm in Keycloak is the equivalent of a tenant. It allows creating isolated groups of applications and users. By default there is a single realm in Keycloak called `master`. This is dedicated to manage Keycloak and should not be used for your own applications.
+
+Let’s create our first realm.
+
+1. Open the [Keycloak Admin Console](http://localhost:8080/auth/admin)
+
+2. Hover the mouse over the dropdown in the top-left corner where it says `Master`, then click on `Add realm`
+
+3. Fill in the form with the following values:
+   - Name: `myrealm`
+
+4. Click `Create`
+
+![add-realm](https://user-images.githubusercontent.com/15948693/149637305-ad291acb-9c3f-41ec-b7ec-099cdb34a867.png)
+
 ## Credits
 - [German Fica](https://germanfica.com/)
 - [cavanosa](https://github.com/cavanosa)
