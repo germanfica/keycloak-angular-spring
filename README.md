@@ -37,7 +37,7 @@ git clone https://github.com/germanfica/keycloak-angular-spring-boot.git
 
 ## Keycloak Getting Started
 
-Get started with Keycloak. You can find this guide in the [official documentation](https://www.keycloak.org/getting-started/getting-started-zip).
+Get started with Keycloak. A useful getting started guide can be found in the [official documentation](https://www.keycloak.org/getting-started/getting-started-zip). But I strongly recommend you to follow the instructions below, as there are additional things we will need to do for this project.
 
 ### Update default Keycloak port
 
