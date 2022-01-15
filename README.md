@@ -10,6 +10,7 @@ This repository provides an angular and maven project for managing a foo’s inf
 ## Getting Started
 Follow the below instructions to get started with Guess the Number Game source code:
 - [Make sure you have all Requirements](#requirements)
+- [Setup Keykloak](#keycloak-getting-started)
 - [Download Source Code](#download)
 - Open Project in your favourite Java IDE and Enjoy!
 
@@ -33,6 +34,10 @@ git clone https://github.com/germanfica/keycloak-angular-spring-boot.git
 
 - `mvn clean`
 - `mvn clean install`
+
+## Keycloak Getting Started
+
+Get started with Keycloak. You can find this guide in the [official documentation](https://www.keycloak.org/getting-started/getting-started-zip).
 
 ## Credits
 - [German Fica](https://germanfica.com/)
