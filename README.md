@@ -82,6 +82,38 @@ Let’s create our first realm.
 
 ![add-realm](https://user-images.githubusercontent.com/15948693/149637305-ad291acb-9c3f-41ec-b7ec-099cdb34a867.png)
 
+### Create a user
+
+Initially there are no users in a new realm, so let’s create one:
+
+1. Open the [Keycloak Admin Console](http://localhost:8080/auth/admin)
+
+2. Click `Users` (left-hand menu)
+
+   - Click `Add user` (top-right corner of table)
+
+3. Fill in the form with the following values:
+
+   - Username: `myuser`
+
+   - First Name: Your first name
+
+   - Last Name: Your last name
+
+4. Click `Save`
+
+![add-user](https://user-images.githubusercontent.com/15948693/149637545-a1e7a3ce-2155-4933-b2b5-eadf1b466036.png)
+
+The user will need an initial password set to be able to login. To do this:
+
+1. Click `Credentials` (top of the page)
+
+2. Fill in the `Set Password` form with a password
+
+3. Click `ON` next to `Temporary` to prevent having to update password on first login
+
+![set-password](https://user-images.githubusercontent.com/15948693/149637606-b03b402a-e9b8-453d-aacf-b5aba9ccf56b.png)
+
 ## Credits
 - [German Fica](https://germanfica.com/)
 - [cavanosa](https://github.com/cavanosa)
