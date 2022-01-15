@@ -107,7 +107,7 @@ On Windows run:
 > ...\bin\standalone.bat -Djboss.socket.binding.port-offset=100
 ```
 
-And finally Confirm that the Keycloak server is running. Go to http://localhost:8180/auth/admin/ . If the admin console opens, you are ready to follow this guide.
+And finally Confirm that the Keycloak server is running. Go to http://localhost:8180/auth/admin/ . If the admin console opens, you are ready to continue this guide.
 
 ### Start Keycloak
 
