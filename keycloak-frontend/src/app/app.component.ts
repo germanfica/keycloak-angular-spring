@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   authConfig: AuthConfig = {
-    issuer: 'http://localhost:8080/auth/realms/learning-platform',
+    issuer: 'http://localhost:8180/auth/realms/learning-platform',
     redirectUri: window.location.origin,
     clientId: 'frontend-client',
     responseType: 'code',
