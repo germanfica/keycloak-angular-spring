@@ -67,6 +67,8 @@ keycloak.bearer-only = true
 
 Get started with Keycloak. A useful getting started guide can be found in the [official documentation](https://www.keycloak.org/getting-started/getting-started-zip). But I strongly recommend you to follow the instructions below, as there are additional things we will need to do for this project.
 
+Or alternatively, you can also watch this YouTube video [Autenticación Keycloak + Angular 10 + Spring-Boot full-stack: Parte 1: Presentación del proyecto](https://youtu.be/W38qJEodeKs?list=PL4bT56Uw3S4wEZ0Sp7jrGAX8DMS-MKowg).
+
 ### Update default Keycloak port
 
 The default port is `8080`. Go to `standalone/configuration/standalone.xml` in the Keycloak installation folder and look for `jboss.http.port` attribute. We want to change the default port to `8180`.
