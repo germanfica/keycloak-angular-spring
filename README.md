@@ -152,6 +152,11 @@ Let’s create our first realm.
 
 ![add-realm](https://user-images.githubusercontent.com/15948693/149637305-ad291acb-9c3f-41ec-b7ec-099cdb34a867.png)
 
+### Create a client
+
+We will need 2 (two) clients, one for the backend and one for the frontend in our realm, so let’s create them:
+
+
 ### Create a user
 
 Initially there are no users in a new realm, so let’s create one:
