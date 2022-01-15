@@ -1,4 +1,4 @@
-# Angular 13 + Spring Boot 2.6.2 + Keycloak authentication
+# Angular 13 + Spring Boot 2.6.2 + OAuth 2.0 Keycloak authentication
 
 This repository provides an angular and maven project for managing a foo’s information.
 
