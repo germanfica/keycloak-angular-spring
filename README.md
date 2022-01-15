@@ -69,9 +69,9 @@ Get started with Keycloak. A useful getting started guide can be found in the [o
 
 Or alternatively, you can also watch this YouTube video [Autenticación Keycloak + Angular 10 + Spring-Boot full-stack: Parte 2](https://youtu.be/vCZXcCNppA0?list=PL4bT56Uw3S4wEZ0Sp7jrGAX8DMS-MKowg).
 
-### Update default Keycloak port
+### Update default Keycloak port (Alternative 1 - Recommended)
 
-The default port is `8080`. Go to `standalone/configuration/standalone.xml` in the Keycloak installation folder and look for `jboss.http.port` attribute. We want to change the default port to `8180`.
+The default port is `8080`. Go to `standalone/configuration/standalone.xml` in the Keycloak installation folder and look for `jboss.http.port` property. We want to change the default port to `8180`.
 
 From this:
 
@@ -85,10 +85,29 @@ To this:
 <socket-binding name="http" port="${jboss.http.port:8180}"/>
 ```
 
-You can also check the following articles:
+### Adjusting the port used by Keycloak (Alternative 2)
+
+You can check the following articles:
 
 - [#1 Adjusting the port used by Keycloak](https://github.com/keycloak/keycloak-documentation/blob/main/getting_started/topics/sample-app/proc-adjusting-ports.adoc).
 - [#2 Adjusting the port used by Keycloak](https://www.keycloak.org/docs/13.0/getting_started/#adjusting-the-port-used-by-keycloak).
+
+Start Keycloak server by supplying a value for the `jboss.socket.binding.port-offset` system property. This value is added to the base value of every port opened by the Keycloak server. In this example, 100 is the value.
+
+On Linux run:
+
+```bash
+$ cd bin
+$ ./standalone.sh -Djboss.socket.binding.port-offset=100
+```
+
+On Windows run:
+
+```bash
+> ...\bin\standalone.bat -Djboss.socket.binding.port-offset=100
+```
+
+And finally Confirm that the Keycloak server is running. Go to http://localhost:8180/auth/admin/ . If the admin console opens, you are ready to follow this guide.
 
 ### Start Keycloak
 
