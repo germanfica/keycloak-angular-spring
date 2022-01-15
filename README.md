@@ -114,6 +114,18 @@ The user will need an initial password set to be able to login. To do this:
 
 ![set-password](https://user-images.githubusercontent.com/15948693/149637606-b03b402a-e9b8-453d-aacf-b5aba9ccf56b.png)
 
+### Login to account console
+
+Let’s now try to login to the account console to verify the user is configured correctly.
+
+1. Open the [Keycloak Account Console](http://localhost:8080/auth/realms/myrealm/account)
+
+2. Login with `myuser` and the password you created earlier
+
+You should now be logged-in to the account console where users can manage their accounts.
+
+![account-console](https://user-images.githubusercontent.com/15948693/149637695-4d4e355f-6b50-42d2-a6f5-f67e1ff9c349.png)
+
 ## Credits
 - [German Fica](https://germanfica.com/)
 - [cavanosa](https://github.com/cavanosa)
