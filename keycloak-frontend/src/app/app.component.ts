@@ -1,5 +1,5 @@
-import { LoginService } from './services/login.service';
-import { MessageService } from './services/message.service';
+import { LoginService } from '@core/services/login.service';
+import { MessageService } from '@core/services/message.service';
 import { AuthConfig, OAuthService, NullValidationHandler } from 'angular-oauth2-oidc';
 import { Component } from '@angular/core';
 

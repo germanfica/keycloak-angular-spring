@@ -1,7 +1,7 @@
-import { LoginService } from './../../services/login.service';
-import { FooService } from './../../services/foo.service';
+import { LoginService } from '@core/services/login.service';
+import { FooService } from '@core/services/foo.service';
 import { Component, OnInit } from '@angular/core';
-import { Foo } from 'src/app/models/foo';
+import { Foo } from '@core/models/foo';
 
 @Component({
   selector: 'app-lista',

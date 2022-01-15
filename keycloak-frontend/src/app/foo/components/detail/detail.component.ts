@@ -1,6 +1,6 @@
-import { Foo } from './../../models/foo';
+import { Foo } from '@core/models/foo';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FooService } from './../../services/foo.service';
+import { FooService } from '@core/services/foo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

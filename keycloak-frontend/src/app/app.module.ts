@@ -10,10 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
-import { ListaComponent } from './foo/lista/lista.component';
-import { DetailComponent } from './foo/detail/detail.component';
-import { CreateComponent } from './foo/create/create.component';
-import { UpdateComponent } from './foo/update/update.component';
+import { ListaComponent } from './foo/components/lista/lista.component';
+import { DetailComponent } from './foo/components/detail/detail.component';
+import { CreateComponent } from './foo/components/create/create.component';
+import { UpdateComponent } from './foo/components/update/update.component';
 import { SignupComponent } from './signup/signup.component';
 
 @NgModule({

@@ -1,5 +1,5 @@
-import { Foo } from './../../models/foo';
-import { FooService } from './../../services/foo.service';
+import { Foo } from '@core/models/foo';
+import { FooService } from '@core/services/foo.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

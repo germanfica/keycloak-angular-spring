@@ -1,10 +1,10 @@
-import { SignupGuard } from './guards/signup.guard';
-import { FooGuard } from './guards/foo.guard';
+import { SignupGuard } from '@core/guards/signup.guard';
+import { FooGuard } from '@core/guards/foo.guard';
 import { SignupComponent } from './signup/signup.component';
-import { CreateComponent } from './foo/create/create.component';
-import { UpdateComponent } from './foo/update/update.component';
-import { DetailComponent } from './foo/detail/detail.component';
-import { ListaComponent } from './foo/lista/lista.component';
+import { CreateComponent } from './foo/components/create/create.component';
+import { UpdateComponent } from './foo/components/update/update.component';
+import { DetailComponent } from './foo/components/detail/detail.component';
+import { ListaComponent } from './foo/components/lista/lista.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
