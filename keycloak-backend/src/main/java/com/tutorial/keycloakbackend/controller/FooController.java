@@ -23,19 +23,19 @@ public class FooController {
                     new Foo(3, "foo 3")).collect(Collectors.toList());
 
     @GetMapping("/list")
-    @RolesAllowed("backend-user")
+    @RolesAllowed("ROLE_USER")
     public ResponseEntity<List<Foo>> list(){
         return new ResponseEntity(foos, HttpStatus.OK);
     }
 
-    @RolesAllowed("backend-user")
+    @RolesAllowed("ROLE_USER")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Foo> detail(@PathVariable("id") int id){
         Foo foo = foos.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
         return new ResponseEntity(foo, HttpStatus.OK);
     }
 
-    @RolesAllowed("backend-admin")
+    @RolesAllowed("ROLE_ADMIN")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody Foo foo){
         int maxIndex = foos.stream().max(Comparator.comparing(m -> m.getId())).get().getId();
@@ -44,7 +44,7 @@ public class FooController {
         return new ResponseEntity(new ResponseMessage("creado"), HttpStatus.CREATED);
     }
 
-    @RolesAllowed("backend-admin")
+    @RolesAllowed("ROLE_ADMIN")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody Foo foo){
         Foo fooUpdate = foos.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
@@ -52,7 +52,7 @@ public class FooController {
         return new ResponseEntity(new ResponseMessage("actualizado"), HttpStatus.OK);
     }
 
-    @RolesAllowed("backend-admin")
+    @RolesAllowed("ROLE_ADMIN")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
         Foo foo = foos.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
