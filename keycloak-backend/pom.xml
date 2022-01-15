@@ -16,6 +16,8 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<!-- Dependencies properties -->
+		<keycloak.version>16.1.0</keycloak.version>
 	</properties>
 
 	<dependencies>
@@ -37,7 +39,7 @@
 		<dependency>
 			<groupId>org.keycloak</groupId>
 			<artifactId>keycloak-admin-client</artifactId>
-			<version>11.0.0</version>
+			<version>${keycloak.version}</version>
 		</dependency>
 
 
@@ -64,7 +66,7 @@
 			<dependency>
 				<groupId>org.keycloak.bom</groupId>
 				<artifactId>keycloak-adapter-bom</artifactId>
-				<version>11.0.0</version>
+				<version>${keycloak.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
