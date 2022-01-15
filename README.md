@@ -75,11 +75,11 @@ bin/standalone.bat
 
 Keycloak does not come with a default admin user, which means before you can start using Keycloak you need to create an admin user.
 
-To do this open http://localhost:8080/auth, then fill in the form with your preferred username and password.
+To do this open http://localhost:8180/auth, then fill in the form with your preferred username and password.
 
 ### Login to the admin console
 
-Go to the [Keycloak Admin Console](http://localhost:8080/auth/admin) and login with the username and password you created earlier.
+Go to the [Keycloak Admin Console](http://localhost:8180/auth/admin) and login with the username and password you created earlier.
 
 ### Create a realm
 
@@ -87,7 +87,7 @@ A realm in Keycloak is the equivalent of a tenant. It allows creating isolated g
 
 Let’s create our first realm.
 
-1. Open the [Keycloak Admin Console](http://localhost:8080/auth/admin)
+1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
 
 2. Hover the mouse over the dropdown in the top-left corner where it says `Master`, then click on `Add realm`
 
@@ -102,7 +102,7 @@ Let’s create our first realm.
 
 Initially there are no users in a new realm, so let’s create one:
 
-1. Open the [Keycloak Admin Console](http://localhost:8080/auth/admin)
+1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
 
 2. Click `Users` (left-hand menu)
 
@@ -134,7 +134,7 @@ The user will need an initial password set to be able to login. To do this:
 
 Let’s now try to login to the account console to verify the user is configured correctly.
 
-1. Open the [Keycloak Account Console](http://localhost:8080/auth/realms/myrealm/account)
+1. Open the [Keycloak Account Console](http://localhost:8180/auth/realms/myrealm/account)
 
 2. Login with `myuser` and the password you created earlier
 
