@@ -35,6 +35,14 @@ git clone https://github.com/germanfica/keycloak-angular-spring-boot.git
 - `mvn clean`
 - `mvn clean install`
 
+## Maven dependencies
+
+- [Spring Boot Starter Security](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security)
+- [Spring Boot Starter Web](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web)
+- [Project Lombok](https://mvnrepository.com/artifact/org.projectlombok/lombok)
+- [Keycloak Spring Boot Default Starter](https://mvnrepository.com/artifact/org.keycloak/keycloak-spring-boot-starter)
+- [Keycloak Admin REST Client](https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client)
+
 ## Keycloak Getting Started
 
 Get started with Keycloak. A useful getting started guide can be found in the [official documentation](https://www.keycloak.org/getting-started/getting-started-zip). But I strongly recommend you to follow the instructions below, as there are additional things we will need to do for this project.
