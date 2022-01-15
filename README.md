@@ -85,6 +85,11 @@ To this:
 <socket-binding name="http" port="${jboss.http.port:8180}"/>
 ```
 
+You can also check the following articles:
+
+- [#1 Adjusting the port used by Keycloak](https://github.com/keycloak/keycloak-documentation/blob/main/getting_started/topics/sample-app/proc-adjusting-ports.adoc).
+- [#2 Adjusting the port used by Keycloak](https://www.keycloak.org/docs/13.0/getting_started/#adjusting-the-port-used-by-keycloak).
+
 ### Start Keycloak
 
 From a terminal open the directory keycloak-16.1.0, then to start Keycloak run the following command.
