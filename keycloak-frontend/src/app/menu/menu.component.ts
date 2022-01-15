@@ -8,9 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  @Input() isLogged: boolean;
-  @Input() isAdmin: boolean;
-  @Input() username: string;
+  @Input() isLogged: boolean = false;
+  @Input() isAdmin: boolean = false;
+  @Input() username: string = "";
 
 
   constructor(private loginService: LoginService) { }

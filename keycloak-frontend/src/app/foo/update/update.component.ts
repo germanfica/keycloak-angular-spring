@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateComponent implements OnInit {
 
-  foo: Foo;
+  foo: Foo = {} as Foo;
 
   constructor(
     private fooService: FooService,
@@ -19,7 +19,7 @@ export class UpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.params.id;
+    const id : number = this.activatedRoute.snapshot.params['id'];
     this.fooService.detail(id).subscribe(
       data => {
         this.foo = data;
@@ -29,7 +29,7 @@ export class UpdateComponent implements OnInit {
   }
 
   onUpdate(): void {
-    const id = this.activatedRoute.snapshot.params.id;
+    const id : number = this.activatedRoute.snapshot.params['id'];
     this.fooService.update(id, this.foo).subscribe(
       data => {
         console.log(data);

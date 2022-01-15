@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  foo: Foo;
+  foo: Foo = {} as Foo;
 
   constructor(
     private fooService: FooService,
@@ -19,7 +19,7 @@ export class DetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.params.id;
+    const id : number = this.activatedRoute.snapshot.params['id'];
     this.fooService.detail(id).subscribe(
       data => {
         this.foo = data;

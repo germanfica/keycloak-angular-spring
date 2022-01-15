@@ -21,7 +21,10 @@ export class LoginService {
   }
 
   public getUsername(): string {
-    return this.oauthService.getIdentityClaims()[`preferred_username`];
+    let claims : any = this.oauthService.getIdentityClaims();
+    if (!claims) return "";
+
+    return claims['preferred_username']; // claims.preferred_username
   }
 
   public getIsAdmin(): boolean {

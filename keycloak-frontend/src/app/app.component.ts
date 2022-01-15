@@ -11,9 +11,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'keycloak-frontend';
 
-  username: string;
-  isLogged: boolean;
-  isAdmin: boolean;
+  username: string = "";
+  isLogged: boolean = false;
+  isAdmin: boolean = false;
 
   constructor(
     private oauthService: OAuthService,
@@ -24,9 +24,9 @@ export class AppComponent {
   }
 
   authConfig: AuthConfig = {
-    issuer: 'http://localhost:8180/auth/realms/tutorial',
+    issuer: 'http://localhost:8080/auth/realms/learning-platform',
     redirectUri: window.location.origin,
-    clientId: 'tutorial-frontend',
+    clientId: 'frontend-client',
     responseType: 'code',
     scope: 'openid profile email offline_access',
     showDebugInformation: true,

@@ -11,7 +11,7 @@ export class FooGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
-    const requiredRoles = next.data.requiredRoles;
+    const requiredRoles = next.data['requiredRoles'];
     if (!this.loginService.getIsLogged()) {
       this.router.navigate(['/']);
       return false;

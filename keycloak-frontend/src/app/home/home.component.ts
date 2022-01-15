@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  username: string;
+  username: string = "";
 
   constructor(private messageService: MessageService) { }
 

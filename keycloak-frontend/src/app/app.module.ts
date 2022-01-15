@@ -34,7 +34,7 @@ import { SignupComponent } from './signup/signup.component';
     FormsModule,
     OAuthModule.forRoot({
       resourceServer: {
-          allowedUrls: ['http://localhost:8080/foo'],
+          allowedUrls: ['http://localhost:8081/api/test'],
           sendAccessToken: true
       }
   })

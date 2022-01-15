@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
 
-  foo: Foo;
-  fooName: string;
+  foo: Foo = {} as Foo;
+  fooName: string = "";
 
   constructor(
     private fooService: FooService,
@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit {
   }
 
   onCreate(): void {
-    this.foo = new Foo(null, this.fooName);
+    this.foo = new Foo(-1, this.fooName);
     this.fooService.create(this.foo).subscribe(
       data => {
         console.log(data);

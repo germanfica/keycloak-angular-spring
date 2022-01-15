@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  username: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
+  username: string = "";
+  email: string = "";
+  firstName: string = "";
+  lastName: string = "";
+  password: string = "";
 
   constructor(private userService: UserService, private router: Router) { }
 

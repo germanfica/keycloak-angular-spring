@@ -12,7 +12,7 @@ export class ListaComponent implements OnInit {
 
   foos: Foo[] = [];
 
-  isAdmin: boolean;
+  isAdmin: boolean = {} as boolean;
 
   constructor(private fooService: FooService, private loginService: LoginService) { }
 
@@ -23,20 +23,24 @@ export class ListaComponent implements OnInit {
 
   loadFoos(): void {
     this.fooService.list().subscribe(
-      data => {
-        this.foos = data;
-      },
-      err => console.log(err)
+      {
+        next: (data) => this.foos = data,
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
     );
   }
 
   onDelete(id: number): void {
     this.fooService.delete(id).subscribe(
-      data => {
-        console.log(data);
-        this.loadFoos();
-      },
-      err => console.log(err)
+      {
+        next: (data) => {
+          console.log(data);
+          this.loadFoos();
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
     );
   }
 
