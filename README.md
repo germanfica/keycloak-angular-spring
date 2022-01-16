@@ -378,7 +378,9 @@ Repeat the above steps but now with the following role names:
 
 ### 🔒 Create realm roles
 
-We will now need two roles for our realm.  So let's create one:
+We will now need two roles for our realm. So let's create them:
+
+#### Create `realm-admin` role
 
 1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
 
@@ -407,6 +409,36 @@ The `realm-admin` role will need `Composite Roles` enabled, as we want to associ
    - `ROLE_ADMIN`
 
 ![admin-composite-roles](https://user-images.githubusercontent.com/15948693/149650921-eb3b80b1-adab-4fd2-bfc2-5d16eef746f5.png)
+
+#### Create `realm-user` role
+
+1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
+
+2. Click `Roles` (left-hand menu)
+
+   - Click `Add Role` (top-right corner of table)
+
+3. Fill in the form with the following values:
+
+   - Role Name: `realm-user`
+
+4. Click `Save`
+
+![realm-admin](https://user-images.githubusercontent.com/15948693/149646386-e57ff40b-3f73-4d87-b78e-45dc109007ed.png)
+
+The `realm-user` role will need `Composite Roles` enabled, as we want to associate `backend-client` roles to it. To do this:
+
+1. Click `Details` (top of the page)
+
+2. Click `ON` next to `Composite Roles`
+
+   - Select `backend-client` next to `Client Roles`
+
+4. Add in the `Associated Roles` the following roles:
+
+   - `ROLE_USER`
+
+![user-composite-roles](https://user-images.githubusercontent.com/15948693/149651463-d094db47-996e-4382-a800-9d0a59fa68a9.png)
 
 ### Create a user
 
