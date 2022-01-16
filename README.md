@@ -442,7 +442,7 @@ The `realm-user` role will need `Composite Roles` enabled, as we want to associa
 
 ![user-composite-roles](https://user-images.githubusercontent.com/15948693/149651463-d094db47-996e-4382-a800-9d0a59fa68a9.png)
 
-### Create a user
+### 😲 Create a user
 
 Initially there are no users in a new realm, so let’s create one:
 
@@ -473,6 +473,11 @@ The user will need an initial password set to be able to login. To do this:
 3. Click `ON` next to `Temporary` to prevent having to update password on first login
 
 ![set-password](https://user-images.githubusercontent.com/15948693/149637606-b03b402a-e9b8-453d-aacf-b5aba9ccf56b.png)
+
+Repeat the above steps but now with the following user names:
+
+- `admin`
+- `user`
 
 ### Login to account console
 
