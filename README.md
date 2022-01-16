@@ -220,9 +220,14 @@ The client will need a Valid URI pattern in order to be able to redirect to afte
 
 ### 🔒 Create backend client roles
 
-
+- `ROLE_USER`
+- `ROLE_MODERATOR`
+- `ROLE_ADMIN`
 
 ### 🔒 Create realm roles
+
+- `admin-realm`
+- `user-realm`
 
 ### Create a user
 
