@@ -159,12 +159,11 @@ Valid Redirect URIs: http://localhost:4200/*
 Web Origins: *
 ```
 
-##### 🔒 Backend client roles
+##### 🔒 Client roles
 
 ```
-ROLE_USER
-ROLE_MODERATOR
-ROLE_ADMIN
+Client ID: backend-client
+Roles: ROLE_USER, ROLE_MODERATOR, ROLE_ADMIN
 ```
 
 ##### 🔒 Realm roles
