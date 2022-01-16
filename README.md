@@ -228,6 +228,8 @@ Or alternatively, you can also watch this YouTube video [Autenticación Keycloak
 
 [Create a user](#-create-a-user)
 
+[Login to account console](#login-to-account-console)
+
 [Add roles to a user](#-add-roles-to-a-user)
 
 ### Update default Keycloak port (Alternative 1 - Recommended)
