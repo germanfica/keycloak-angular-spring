@@ -491,7 +491,9 @@ You should now be logged-in to the account console where users can manage their 
 
 ![account-console](https://user-images.githubusercontent.com/15948693/149637695-4d4e355f-6b50-42d2-a6f5-f67e1ff9c349.png)
 
-### 🔒 Add roles to `admin`
+### 🔒 Add roles to a user
+
+#### Add roles to `admin`
 
 1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
 
@@ -507,6 +509,22 @@ You should now be logged-in to the account console where users can manage their 
    - `realm-user`
 
 ![admin-role-mappings](https://user-images.githubusercontent.com/15948693/149652981-22609e76-2384-4be1-b8ae-5251960fd8e1.png)
+
+#### Add roles to `user`
+
+1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
+
+2. Click `Users` (left-hand menu)
+
+   - Click `user` (ID column of table)
+
+3. Click `Role Mappings` (top of the page)
+
+4. In `Realm Roles` add the following Available Roles:
+
+   - `realm-user`
+
+![user-role-mappings](https://user-images.githubusercontent.com/15948693/149653130-abb4a012-de24-4a89-b926-c18fdfba5765.png)
 
 ## Credits
 - [German Fica](https://germanfica.com/)
