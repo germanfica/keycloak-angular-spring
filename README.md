@@ -424,7 +424,7 @@ The `realm-admin` role will need `Composite Roles` enabled, as we want to associ
 
 4. Click `Save`
 
-![realm-admin](https://user-images.githubusercontent.com/15948693/149646386-e57ff40b-3f73-4d87-b78e-45dc109007ed.png)
+![realm-user](https://user-images.githubusercontent.com/15948693/149651638-727a7919-93af-499e-bb3d-323a58b5aed1.png)
 
 The `realm-user` role will need `Composite Roles` enabled, as we want to associate `backend-client` roles to it. To do this:
 
