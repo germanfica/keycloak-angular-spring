@@ -73,7 +73,7 @@ Or alternatively, you can also watch this YouTube video [Autenticación Keycloak
 
 ##### 🌍 Realm name
 
-- learning-platform
+- `myrealm`
 
 ##### 👤 Clients
 
