@@ -68,11 +68,21 @@ keycloak.bearer-only = true
 Open `src/app/app.module.ts`
 
 ```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
 import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AppComponent
+  ],
   imports: [
+    BrowserModule,
+    AppRoutingModule,
     OAuthModule.forRoot({
       resourceServer: {
         allowedUrls: [
@@ -83,7 +93,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     })
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
