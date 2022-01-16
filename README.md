@@ -364,7 +364,10 @@ The client will need a Valid URI pattern in order to be able to redirect to afte
 
 5. Click `Save`
 
-- `ROLE_USER`
+![backend-client-user-role](https://user-images.githubusercontent.com/15948693/149645973-03de9892-f73e-47da-9b6d-10bde0346016.png)
+
+Repeat the above steps but now with the following role names:
+
 - `ROLE_MODERATOR`
 - `ROLE_ADMIN`
 
