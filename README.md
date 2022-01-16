@@ -230,7 +230,7 @@ Or alternatively, you can also watch this YouTube video [Autenticación Keycloak
 
 [Login to account console](#login-to-account-console)
 
-[Assign roles to a user](#-Assign-roles-to-a-user)
+[Assign roles to a user](#-assign-roles-to-a-user)
 
 ### Update default Keycloak port (Alternative 1 - Recommended)
 
@@ -529,9 +529,9 @@ You should now be logged-in to the account console where users can manage their 
 
 ![account-console](https://user-images.githubusercontent.com/15948693/149637695-4d4e355f-6b50-42d2-a6f5-f67e1ff9c349.png)
 
-### 🔒 Add roles to a user
+### 🔒 Assign roles to a user
 
-#### Add roles to `admin`
+#### Assign roles to `admin`
 
 1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
 
