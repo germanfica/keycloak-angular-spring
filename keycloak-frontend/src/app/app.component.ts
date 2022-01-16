@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'keycloak-frontend';
+  title = 'keycloak-client';
 
   username: string = "";
   isLogged: boolean = false;
@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   authConfig: AuthConfig = {
-    issuer: 'http://localhost:8180/auth/realms/learning-platform',
+    issuer: 'http://localhost:8180/auth/realms/myrealm',
     redirectUri: window.location.origin,
     clientId: 'frontend-client',
     responseType: 'code',

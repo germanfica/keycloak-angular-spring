@@ -36,14 +36,14 @@ import { LayoutComponent } from './layout/layout.component';
     FormsModule,
     OAuthModule.forRoot({
       resourceServer: {
-          allowedUrls: [
-            'http://localhost:8081/api/test',
-            'http://localhost:8080/api/test',
-            'http://localhost:8080/foo'
-          ],
-          sendAccessToken: true
+        allowedUrls: [
+          'http://localhost:8081/api/test',
+          'http://localhost:8080/api/test',
+          'http://localhost:8080/foo'
+        ],
+        sendAccessToken: true
       }
-  })
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
