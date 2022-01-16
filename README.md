@@ -202,6 +202,32 @@ Get started with Keycloak. A useful getting started guide can be found in the [o
 
 Or alternatively, you can also watch this YouTube video [Autenticación Keycloak + Angular 10 + Spring-Boot full-stack: Parte 2](https://youtu.be/vCZXcCNppA0?list=PL4bT56Uw3S4wEZ0Sp7jrGAX8DMS-MKowg).
 
+### Table of Contents
+
+[Update default Keycloak port (Alternative 1 - Recommended)](#update-default-keycloak-port-alternative-1---recommended)
+
+[Adjusting the port used by Keycloak (Alternative 2)](#adjusting-the-port-used-by-keycloak-alternative-2)
+
+[Start Keycloak](#start-keycloak)
+
+[Create an admin user](#create-an-admin-user)
+
+[Create a realm](#-create-a-realm)
+
+[Create a backend client](#-create-a-backend-client)
+
+[Create a frontend client](#-create-a-frontend-client)
+
+[Naming Security Roles](#-naming-security-roles)
+
+[Create client roles](#-create-client-roles)
+
+[Create realm roles](#-create-realm-roles)
+
+[Create a user](#-create-a-user)
+
+[Add roles to a user](#-add-roles-to-a-user)
+
 ### Update default Keycloak port (Alternative 1 - Recommended)
 
 The default port is `8080`. Go to `standalone/configuration/standalone.xml` in the Keycloak installation folder and look for `jboss.http.port` property. We want to change the default port to `8180`.
