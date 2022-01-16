@@ -55,7 +55,7 @@ Open `src/main/resources/application.properties`
 server.port=8080
 
 # keycloak
-keycloak.realm = learning-platform
+keycloak.realm = myrealm
 keycloak.auth-server-url = http://localhost:8180/auth
 keycloak.ssl-required = external
 keycloak.resource = backend-client
@@ -63,45 +63,64 @@ keycloak.use-resource-role-mappings = true
 keycloak.bearer-only = true
 ```
 
+## ⚙️ Keycloak basic settings
+
+##### 🌍 Realm
+
+```
+Name: myrealm
+```
+
+##### 👤 Clients
+
+```
+Client ID: backend-client
+Access Type: bearer-only
+```
+
+```
+Client ID: frontend-client
+Valid Redirect URIs: http://localhost:4200/*
+Web Origins: *
+```
+
+##### 🔒 Backend client roles
+
+```
+ROLE_USER
+ROLE_MODERATOR
+ROLE_ADMIN
+```
+
+##### 🔒 Realm roles
+
+```
+Role Name: admin-realm
+```
+
+```
+Role Name: user-realm
+```
+
+##### 😲 Users
+
+```
+Username: admin
+Email: admin@localhost
+Roles: ROLE_USER, ROLE_MODERATOR, ROLE_ADMIN
+```
+
+```
+Username: user
+Email: admin@localhost
+Roles: ROLE_USER
+```
+
 ## Keycloak Getting Started
 
 Get started with Keycloak. A useful getting started guide can be found in the [official documentation](https://www.keycloak.org/getting-started/getting-started-zip). But I strongly recommend you to follow the instructions below, as there are additional things we will need to do for this project.
 
 Or alternatively, you can also watch this YouTube video [Autenticación Keycloak + Angular 10 + Spring-Boot full-stack: Parte 2](https://youtu.be/vCZXcCNppA0?list=PL4bT56Uw3S4wEZ0Sp7jrGAX8DMS-MKowg).
-
-### ⚙️ Basic settings
-
-##### 🌍 Realm name
-
-- `myrealm`
-
-##### 👤 Clients
-
-- `backend-client`
-   - Access Type: `bearer-only`
-- `frontend-client`
-   - Valid Redirect URIs: `http://localhost:4200/*`
-   - Web Origins: `*`
-
-##### 🔒 Backend client roles
-
-- `ROLE_USER`
-- `ROLE_MODERATOR`
-- `ROLE_ADMIN`
-
-##### 🔒 Realm roles
-
-- `admin-realm`
-- `user-realm`
-
-##### 😲 Users
-
-- `admin`
-   - Username: `admin`
-   - Email: `admin@localhost`
-- `user`
-   - Username: `user`
-   - Email: `admin@localhost`
 
 ### Update default Keycloak port (Alternative 1 - Recommended)
 
