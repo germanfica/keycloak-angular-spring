@@ -156,6 +156,39 @@ Let’s create our first realm.
 
 We will need 2 (two) clients, one for the backend and one for the frontend in our realm, so let’s create them:
 
+1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
+
+2. Click `Clients` (left-hand menu)
+
+   - Click `Create` (top-right corner of table)
+
+3. Fill in the form with the following values:
+
+   - Client ID: `backend-client`
+
+   - Client Protocol: openid-connect
+
+4. Click `Save`
+
+![backend-client](https://user-images.githubusercontent.com/15948693/149642178-e3187aec-09b2-4219-97bf-158f8fa42cc5.png)
+
+Now let's create the client for the frontend:
+
+1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
+
+2. Click `Clients` (left-hand menu)
+
+   - Click `Create` (top-right corner of table)
+
+3. Fill in the form with the following values:
+
+   - Client ID: `frontend-client`
+
+   - Client Protocol: openid-connect
+
+4. Click `Save`
+
+![frontend-client](https://user-images.githubusercontent.com/15948693/149642215-0154cc0c-c74b-45f8-a79b-fea0264ba384.png)
 
 ### Create a user
 
