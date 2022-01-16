@@ -351,6 +351,14 @@ The client will need a Valid URI pattern in order to be able to redirect to afte
 
 ![Frontend-Client-Settings](https://user-images.githubusercontent.com/15948693/149643580-581879db-cf91-4571-b3a7-395396cac0a3.png)
 
+### 🔤 Naming Security Roles
+
+Spring Security, when using role-based authentication, requires that role names start with `ROLE_`. For example, an administrator role must be declared in Keycloak as `ROLE_ADMIN` or similar, not simply `ADMIN`.
+
+#### References
+
+- [Naming Security Roles](https://www.keycloak.org/docs/latest/securing_apps/index.html#naming-security-roles)
+
 ### 🔒 Create client roles
 
 Initially there are no roles in a client, so let’s create one:
