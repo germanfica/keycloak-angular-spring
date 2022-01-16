@@ -187,13 +187,13 @@ Composite Roles:
 ```
 Username: admin
 Email: admin@localhost
-Roles: ROLE_USER, ROLE_MODERATOR, ROLE_ADMIN
+Realm Roles: realm-admin, realm-user
 ```
 
 ```
 Username: user
 Email: admin@localhost
-Roles: ROLE_USER
+Realm Roles: realm-user
 ```
 
 ## Keycloak Getting Started
@@ -490,6 +490,23 @@ Let’s now try to login to the account console to verify the user is configured
 You should now be logged-in to the account console where users can manage their accounts.
 
 ![account-console](https://user-images.githubusercontent.com/15948693/149637695-4d4e355f-6b50-42d2-a6f5-f67e1ff9c349.png)
+
+### 🔒 Add roles to `admin`
+
+1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
+
+2. Click `Users` (left-hand menu)
+
+   - Click `admin` (ID column of table)
+
+3. Click `Role Mappings` (top of the page)
+
+4. In `Realm Roles` add the following Available Roles:
+
+   - `realm-admin`
+   - `realm-user`
+
+![admin-role-mappings](https://user-images.githubusercontent.com/15948693/149652981-22609e76-2384-4be1-b8ae-5251960fd8e1.png)
 
 ## Credits
 - [German Fica](https://germanfica.com/)
