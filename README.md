@@ -216,7 +216,7 @@ The client will need a Valid URI pattern in order to be able to redirect to afte
 
 3. Click `Save`
 
-![Valid-Redirect-URIs](https://user-images.githubusercontent.com/15948693/149643449-47385452-85f6-470c-9b55-b940c6ac7b09.png)
+![Frontend-Client-Settings](https://user-images.githubusercontent.com/15948693/149643580-581879db-cf91-4571-b3a7-395396cac0a3.png)
 
 ### Create a user
 
