@@ -405,9 +405,7 @@ The `realm-admin` role will need `Composite Roles` enabled, as we want to associ
 
    - `ROLE_ADMIN`
 
-5. Click `Save`
-
-![admin-composite-roles](https://user-images.githubusercontent.com/15948693/149647427-b62f1997-f00f-4425-9bf8-904505583b71.png)
+![admin-composite-roles](https://user-images.githubusercontent.com/15948693/149650921-eb3b80b1-adab-4fd2-bfc2-5d16eef746f5.png)
 
 ### Create a user
 
