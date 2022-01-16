@@ -170,11 +170,11 @@ ROLE_ADMIN
 ##### 🔒 Realm roles
 
 ```
-Role Name: admin-realm
+Role Name: realm-admin
 ```
 
 ```
-Role Name: user-realm
+Role Name: realm-user
 ```
 
 ##### 😲 Users
@@ -375,8 +375,24 @@ Repeat the above steps but now with the following role names:
 
 ### 🔒 Create realm roles
 
-- `admin-realm`
-- `user-realm`
+We will now need two roles for our realm.  So let's create one:
+
+1. Open the [Keycloak Admin Console](http://localhost:8180/auth/admin)
+
+2. Click `Roles` (left-hand menu)
+
+   - Click `Add Role` (top-right corner of table)
+
+3. Fill in the form with the following values:
+
+   - Role Name: `realm-admin`
+
+4. Click `Save`
+
+![realm-admin](https://user-images.githubusercontent.com/15948693/149646386-e57ff40b-3f73-4d87-b78e-45dc109007ed.png)
+
+- `realm-admin`
+- `realm-user`
 
 ### Create a user
 
