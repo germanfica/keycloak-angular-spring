@@ -152,7 +152,7 @@ Let’s create our first realm.
 
 ![add-realm](https://user-images.githubusercontent.com/15948693/149637305-ad291acb-9c3f-41ec-b7ec-099cdb34a867.png)
 
-### Create a client
+### Create a backend client
 
 We will need 2 (two) clients, one for the backend and one for the frontend in our realm, so let’s create them:
 
@@ -171,6 +171,20 @@ We will need 2 (two) clients, one for the backend and one for the frontend in ou
 4. Click `Save`
 
 ![backend-client](https://user-images.githubusercontent.com/15948693/149642178-e3187aec-09b2-4219-97bf-158f8fa42cc5.png)
+
+The client will need a bearer-only access type. To do this:
+
+1. Click `Settings` (top of the page)
+
+2. Fill in the form with the following values:
+
+   - Access Type: `bearer-only`
+
+3. Click `Save`
+
+![backend-client-access-type](https://user-images.githubusercontent.com/15948693/149642963-efed0552-358f-404e-b69f-08886e4ccba1.png)
+
+### Create a frontend client
 
 Now let's create the client for the frontend:
 
