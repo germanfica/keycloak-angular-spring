@@ -135,7 +135,7 @@ To do this open http://localhost:8180/auth, then fill in the form with your pref
 
 Go to the [Keycloak Admin Console](http://localhost:8180/auth/admin) and login with the username and password you created earlier.
 
-### Create a realm
+### 🌍 Create a realm
 
 A realm in Keycloak is the equivalent of a tenant. It allows creating isolated groups of applications and users. By default there is a single realm in Keycloak called `master`. This is dedicated to manage Keycloak and should not be used for your own applications.
 
