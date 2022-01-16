@@ -204,6 +204,18 @@ Now let's create the client for the frontend:
 
 ![frontend-client](https://user-images.githubusercontent.com/15948693/149642215-0154cc0c-c74b-45f8-a79b-fea0264ba384.png)
 
+The client will need a Valid URI pattern in order to be able to redirect to after a successful login or logout. To do this:
+
+1. Click `Settings` (top of the page)
+
+2. Fill in the form with the following values:
+
+   - Valid Redirect URIs: `http://localhost:4200/*`
+
+3. Click `Save`
+
+![Valid-Redirect-URIs](https://user-images.githubusercontent.com/15948693/149643449-47385452-85f6-470c-9b55-b940c6ac7b09.png)
+
 ### Create a user
 
 Initially there are no users in a new realm, so let’s create one:
