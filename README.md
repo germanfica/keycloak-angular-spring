@@ -170,14 +170,16 @@ Roles: ROLE_USER, ROLE_MODERATOR, ROLE_ADMIN
 
 ```
 Role Name: realm-admin
-Client: backend-client
-  Associated Roles: ROLE_ADMIN
+Composite Roles:
+  Client: backend-client
+    Associated Roles: ROLE_ADMIN
 ```
 
 ```
 Role Name: realm-user
-Client: backend-client
-  Associated Roles: ROLE_USER
+Composite Roles:
+  Client: backend-client
+    Associated Roles: ROLE_USER
 ```
 
 ##### 😲 Users
