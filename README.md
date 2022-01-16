@@ -391,6 +391,8 @@ We will now need two roles for our realm.  So let's create one:
 
 ![realm-admin](https://user-images.githubusercontent.com/15948693/149646386-e57ff40b-3f73-4d87-b78e-45dc109007ed.png)
 
+The `realm-admin` role will need to enable the `Composite Roles ` feature, as we want to assign the backend client roles to it. To do this:
+
 - `realm-admin`
 - `realm-user`
 
