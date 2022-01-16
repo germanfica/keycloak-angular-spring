@@ -94,6 +94,15 @@ Or alternatively, you can also watch this YouTube video [Autenticación Keycloak
 - `admin-realm`
 - `user-realm`
 
+##### 😲 Users
+
+- `admin`
+   - Username: `admin`
+   - Email: `admin@localhost`
+- `user`
+   - Username: `user`
+   - Email: `admin@localhost`
+
 ### Update default Keycloak port (Alternative 1 - Recommended)
 
 The default port is `8080`. Go to `standalone/configuration/standalone.xml` in the Keycloak installation folder and look for `jboss.http.port` property. We want to change the default port to `8180`.
