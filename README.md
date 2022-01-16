@@ -171,7 +171,7 @@ ROLE_ADMIN
 
 ```
 Role Name: realm-admin
-Composite Roles with backend-client Client Roles: ROLE_USER, ROLE_MODERATOR, ROLE_ADMIN
+Composite Roles with backend-client Client Roles: ROLE_ADMIN
 ```
 
 ```
@@ -403,8 +403,6 @@ The `realm-admin` role will need `Composite Roles` feature enabled, as we want t
 
 4. Add in the `Associated Roles` the following roles:
 
-   - `ROLE_USER`
-   - `ROLE_MODERATOR`
    - `ROLE_ADMIN`
 
 5. Click `Save`
