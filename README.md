@@ -393,8 +393,19 @@ We will now need two roles for our realm.  So let's create one:
 
 The `realm-admin` role will need a `Composite Roles` feature enabled, as we want to assign the backend client roles to it. To do this:
 
-- `realm-admin`
-- `realm-user`
+1. Click `Details` (top of the page)
+
+2. Click `ON` next to `Composite Roles`
+
+   - Select `backend-client`
+
+4. Add in the `Associated Roles` the following roles:
+
+   - `ROLE_USER`
+   - `ROLE_MODERATOR`
+   - `ROLE_ADMIN`
+
+5. Click `Save`
 
 ### Create a user
 
