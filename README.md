@@ -63,6 +63,33 @@ keycloak.use-resource-role-mappings = true
 keycloak.bearer-only = true
 ```
 
+## Angular basic settings
+
+Open `src/app/app.module.ts`
+
+```typescript
+import { OAuthModule } from 'angular-oauth2-oidc';
+
+@NgModule({
+  declarations: [],
+  imports: [
+    OAuthModule.forRoot({
+      resourceServer: {
+        allowedUrls: [
+          'http://localhost:8080/foo'
+        ],
+        sendAccessToken: true
+      }
+    })
+  ],
+  providers: [],
+  bootstrap: []
+})
+export class AppModule { }
+```
+
+The `http://localhost:8080/foo` URL corresponds to the backend `FooController` in our Spring Boot project.
+
 ## ⚙️ Keycloak basic settings
 
 ##### 🌍 Realm
