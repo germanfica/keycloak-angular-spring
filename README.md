@@ -212,6 +212,8 @@ Or alternatively, you can also watch this YouTube video [Autenticación Keycloak
 
 [Create an admin user](#create-an-admin-user)
 
+[Login to the admin console](#login-to-the-admin-console)
+
 [Create a realm](#-create-a-realm)
 
 [Create a backend client](#-create-a-backend-client)
