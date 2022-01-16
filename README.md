@@ -348,6 +348,22 @@ The client will need a Valid URI pattern in order to be able to redirect to afte
 
 ### 🔒 Create backend client roles
 
+1. Click `Clients` (left-hand menu)
+
+   - Click `backend-client` (Client ID column of table)
+
+2. Click `Roles` (top of the page)
+
+3. Click `Add Role` (top-right corner of table)
+
+4. Fill in the form with the following values:
+
+   - Role Name: `ROLE_USER`
+
+   - Web Origins: `*`
+
+5. Click `Save`
+
 - `ROLE_USER`
 - `ROLE_MODERATOR`
 - `ROLE_ADMIN`
