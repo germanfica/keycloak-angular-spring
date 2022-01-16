@@ -212,6 +212,8 @@ The client will need a Valid URI pattern in order to be able to redirect to afte
 
    - Valid Redirect URIs: `http://localhost:4200/*`
 
+   - Web Origins: `*`
+
 3. Click `Save`
 
 ![Valid-Redirect-URIs](https://user-images.githubusercontent.com/15948693/149643449-47385452-85f6-470c-9b55-b940c6ac7b09.png)
