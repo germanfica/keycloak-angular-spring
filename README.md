@@ -100,6 +100,44 @@ export class AppModule { }
 
 The `http://localhost:8080/foo` URL corresponds to the backend `FooController` in our Spring Boot project.
 
+Open `src/app/app.component.ts`
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'keycloak-client';
+  
+  authConfig: AuthConfig = {
+    issuer: 'http://localhost:8180/auth/realms/myrealm',
+    redirectUri: window.location.origin,
+    clientId: 'frontend-client',
+    responseType: 'code',
+    scope: 'openid profile email offline_access',
+    showDebugInformation: true,
+  };
+  
+  constructor(private oauthService: OAuthService) {
+    this.configure();
+  }
+  
+  configure(): void {
+    this.oauthService.configure(this.authConfig);
+    this.oauthService.tokenValidationHandler = new NullValidationHandler();
+    this.oauthService.setupAutomaticSilentRefresh();
+    this.oauthService.loadDiscoveryDocument().then(() => this.oauthService.tryLogin())
+      .then(() => {
+        if (this.oauthService.getIdentityClaims()) { }
+      });
+  }
+}
+```
+
 ## ⚙️ Keycloak basic settings
 
 ##### 🌍 Realm
