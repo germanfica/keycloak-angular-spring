@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { MenuComponent } from './menu/menu.component';
-import { SignupComponent } from './signup/signup.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CoreModule } from '@core/core.module';
 
@@ -16,7 +15,6 @@ import { CoreModule } from '@core/core.module';
   declarations: [
     AppComponent,
     MenuComponent,
-    SignupComponent,
     LayoutComponent
   ],
   imports: [

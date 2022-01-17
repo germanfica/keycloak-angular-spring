@@ -1,5 +1,4 @@
 import { SignupGuard } from '@core/guards/signup.guard';
-import { SignupComponent } from './signup/signup.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
@@ -25,7 +24,7 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'signup', component: SignupComponent, canActivate: [SignupGuard] },
+  { path: 'signup', loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule), canActivate: [SignupGuard] },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
