@@ -5,6 +5,7 @@ import { LoginService } from './services/login.service';
 import { MessageService } from './services/message.service';
 import { UserService } from './services/user.service';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { KeycloakService } from './services/keycloak.service';
 
 
 
@@ -27,7 +28,8 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     FooService,
     LoginService,
     MessageService,
-    UserService
+    UserService,
+    KeycloakService
   ]
 })
 export class CoreModule { }
