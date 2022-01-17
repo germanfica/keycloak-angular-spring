@@ -9,10 +9,6 @@ import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
-import { ListaComponent } from './foo/components/lista/lista.component';
-import { DetailComponent } from './foo/components/detail/detail.component';
-import { CreateComponent } from './foo/components/create/create.component';
-import { UpdateComponent } from './foo/components/update/update.component';
 import { SignupComponent } from './signup/signup.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CoreModule } from '@core/core.module';
@@ -22,10 +18,7 @@ import { CoreModule } from '@core/core.module';
     AppComponent,
     HomeComponent,
     MenuComponent,
-    ListaComponent,
-    DetailComponent,
-    CreateComponent,
-    UpdateComponent,
+    
     SignupComponent,
     LayoutComponent
   ],
