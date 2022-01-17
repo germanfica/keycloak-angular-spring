@@ -1,10 +1,5 @@
 import { SignupGuard } from '@core/guards/signup.guard';
-import { FooGuard } from '@core/guards/foo.guard';
 import { SignupComponent } from './signup/signup.component';
-import { CreateComponent } from './foo/components/create/create.component';
-import { UpdateComponent } from './foo/components/update/update.component';
-import { DetailComponent } from './foo/components/detail/detail.component';
-import { ListaComponent } from './foo/components/lista/lista.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -25,28 +20,9 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: 'lista',
-        component: ListaComponent,
-        canActivate: [FooGuard],
-        data: {
-          requiredRoles: ['admin', 'user']
-        }
-      },
-      {
-        path: 'detail/:id', component: DetailComponent,
-        canActivate: [FooGuard],
-        data: { requiredRoles: ['admin', 'user'] }
-      },
-      {
-        path: 'update/:id', component: UpdateComponent,
-        canActivate: [FooGuard],
-        data: { requiredRoles: ['admin'] }
-      },
-      {
-        path: 'create', component: CreateComponent,
-        canActivate: [FooGuard],
-        data: { requiredRoles: ['admin'] }
-      },
+        path: 'foo',
+        loadChildren: () => import('./foo/foo.module').then(m => m.FooModule)
+      }
     ]
   },
 

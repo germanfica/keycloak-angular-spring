@@ -13,8 +13,8 @@
           <tr *ngFor="let foo of foos">
             <th>{{foo.id}}</th>
             <td>{{foo.name}}</td>
-            <td><button class="btn btn-outline-primary" routerLink="/detail/{{foo.id}}"><i class="far fa-eye"></i> View</button></td>
-            <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/update/{{foo.id}}"><i class="far fa-edit"></i> Edit</button></td>
+            <td><button class="btn btn-outline-primary" routerLink="/foo/detail/{{foo.id}}"><i class="far fa-eye"></i> View</button></td>
+            <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/foo/update/{{foo.id}}"><i class="far fa-edit"></i> Edit</button></td>
             <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="onDelete(foo.id)"><i class="far fa-trash-alt"></i> Delete</button></td>
           </tr>
         </tbody>

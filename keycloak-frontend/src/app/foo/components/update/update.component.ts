@@ -41,7 +41,7 @@ export class UpdateComponent implements OnInit {
   }
 
   volver(): void {
-    this.router.navigate(['/lista']);
+    this.router.navigate(['foo/list']);
   }
 
 }
