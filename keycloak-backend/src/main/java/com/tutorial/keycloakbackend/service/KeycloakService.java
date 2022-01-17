@@ -66,6 +66,11 @@ public class KeycloakService {
          return new Object[]{statusId, message};
     }
 
+    /**
+     * Here you have to enter the username and password of the realm administrator.
+     *
+     * @return
+     */
     private RealmResource getRealmResource(){
         Keycloak kc = KeycloakBuilder.builder().serverUrl(server_url).realm("master").username("admin")
                 .password("admin").clientId("admin-cli").resteasyClient(new ResteasyClientBuilder().connectionPoolSize(10).build())
