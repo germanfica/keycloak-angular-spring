@@ -26,6 +26,18 @@ public class KeycloakService {
     @Value("${keycloak.realm}")
     private String realm;
 
+    @Value("${keycloak.master.realm}")
+    private String master_realm;
+
+    @Value("${keycloak.master.username}")
+    private String master_username;
+
+    @Value("${keycloak.master.password}")
+    private String master_admin;
+
+    @Value("${keycloak.master.clientId}")
+    private String master_clientId;
+
     public Object[] createUser(User user){
         ResponseMessage message = new ResponseMessage();
         int statusId = 0;
@@ -72,8 +84,8 @@ public class KeycloakService {
      * @return
      */
     private RealmResource getRealmResource(){
-        Keycloak kc = KeycloakBuilder.builder().serverUrl(server_url).realm("master").username("admin")
-                .password("admin").clientId("admin-cli").resteasyClient(new ResteasyClientBuilder().connectionPoolSize(10).build())
+        Keycloak kc = KeycloakBuilder.builder().serverUrl(server_url).realm(master_realm).username(master_username)
+                .password(master_admin).clientId(master_clientId).resteasyClient(new ResteasyClientBuilder().connectionPoolSize(10).build())
                 .build();
         return kc.realm(realm);
     }
