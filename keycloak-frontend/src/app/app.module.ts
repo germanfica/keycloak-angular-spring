@@ -8,6 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CoreModule } from '@core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
+    OAuthModule.forRoot({
+      resourceServer: {
+        allowedUrls: [
+          'http://localhost:8081/api/test',
+          'http://localhost:8080/api/test',
+          'http://localhost:8080/foo'
+        ],
+        sendAccessToken: true
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
