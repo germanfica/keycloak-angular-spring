@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '@core/services/login.service';
 import { KeycloakService } from '@core/services/keycloak.service';
 
 @Component({
@@ -18,10 +17,10 @@ export class HomeComponent implements OnInit {
    * @param keycloakService is the service that takes care of setting up OAuth with Keycloack.
    * @param loginService is the service that handles the basic information of the authentication system.
    */
-  constructor(private keycloakService: KeycloakService, private loginService: LoginService) { }
+  constructor(private keycloakService: KeycloakService) { }
 
   ngOnInit(): void {
-    this.username = this.loginService.getUsername();
+    this.username = this.keycloakService.getUsername();
     console.log("HomeComponent ngOnInit");
   }
 }

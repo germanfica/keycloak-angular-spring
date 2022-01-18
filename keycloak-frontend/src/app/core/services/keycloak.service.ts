@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AuthConfig, NullValidationHandler, OAuthService, OAuthSuccessEvent } from 'angular-oauth2-oidc';
-import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +27,41 @@ export class KeycloakService {
     this.oauthService.tokenValidationHandler = new NullValidationHandler();
     this.oauthService.setupAutomaticSilentRefresh();
     this.oauthService.loadDiscoveryDocument().then(() => this.oauthService.tryLogin());
+  }
+
+  public login(): void {
+    this.oauthService.initImplicitFlowInternal();
+    //this.oauthService.initCodeFlow();
+    //this.oauthService.initLoginFlow();
+  }
+
+  public logout(): void {
+    this.oauthService.logOut();
+  }
+
+  public getIsLogged(): boolean {
+    return (this.oauthService.hasValidIdToken() && this.oauthService.hasValidAccessToken());
+  }
+
+  public getUsername(): string {
+    let claims: any = this.oauthService.getIdentityClaims();
+    if (!claims) return "";
+
+    return claims['preferred_username']; // claims.preferred_username
+  }
+
+  public getIsAdmin(): boolean {
+    const token = this.oauthService.getAccessToken();
+    let isAdmin = false;
+
+    if (token) {
+      const payload = token.split('.')[1];
+      const payloadDecodedJson = atob(payload);
+      const payloadDecoded = JSON.parse(payloadDecodedJson);
+      // console.log(payloadDecoded.realm_access.roles);
+      isAdmin = payloadDecoded.realm_access.roles.indexOf('realm-admin') !== -1;
+    }
+
+    return isAdmin;
   }
 }

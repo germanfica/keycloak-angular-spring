@@ -1,7 +1,7 @@
-import { LoginService } from '@core/services/login.service';
 import { FooService } from '@core/services/foo.service';
 import { Component, OnInit } from '@angular/core';
 import { Foo } from '@core/models/foo';
+import { KeycloakService } from '@core/services/keycloak.service';
 
 @Component({
   selector: 'app-lista',
@@ -14,11 +14,11 @@ export class ListaComponent implements OnInit {
 
   isAdmin: boolean = {} as boolean;
 
-  constructor(private fooService: FooService, private loginService: LoginService) { }
+  constructor(private fooService: FooService, private keycloakService: KeycloakService) { }
 
   ngOnInit(): void {
     this.loadFoos();
-    this.isAdmin = this.loginService.getIsAdmin();
+    this.isAdmin = this.keycloakService.getIsAdmin();
   }
 
   loadFoos(): void {
