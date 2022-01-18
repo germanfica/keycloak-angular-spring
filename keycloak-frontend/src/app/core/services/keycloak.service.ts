@@ -36,6 +36,10 @@ export class KeycloakService {
   /**
    * Checks whether there are tokens in the hash fragment.
    * 
+   * Why was `Observable` chosen for this method? Often `Observable`
+   * is preferred over `Promise` because it provides the features of
+   * `Promise` and more.
+   * 
    * @returns {Observable} An `Observable` with result `true` if there are tokens.
    */
   afterTryLogin(): Observable<boolean> {
