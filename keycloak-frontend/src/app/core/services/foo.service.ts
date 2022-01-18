@@ -12,7 +12,7 @@ export class FooService {
 
   httpOptions = { headers: new HttpHeaders({'Content-Type' : 'application/json'})};
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { console.log("FooService"); }
 
   public list(): Observable<Foo[]> {
     return this.httpClient.get<Foo[]>(this.fooURL + 'list', this.httpOptions);

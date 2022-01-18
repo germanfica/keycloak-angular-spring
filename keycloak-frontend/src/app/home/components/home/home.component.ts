@@ -1,5 +1,6 @@
-import { MessageService } from '@core/services/message.service';
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '@core/services/login.service';
+import { KeycloakService } from '@core/services/keycloak.service';
 
 @Component({
   selector: 'app-home',
@@ -7,19 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   username: string = "";
 
-  constructor(private messageService: MessageService) { }
+  /**
+   * Inject services.
+   * 
+   * Important: `LoginService` depends on `KeycloakService`.
+   * 
+   * @param keycloakService is the service that takes care of setting up OAuth with Keycloack.
+   * @param loginService is the service that handles the basic information of the authentication system.
+   */
+  constructor(private keycloakService: KeycloakService, private loginService: LoginService) { }
 
   ngOnInit(): void {
-    this.messageService.getMessage().subscribe(
-      {
-        next: (data) => this.username = data[`text`],
-        error: (e) => console.error(e),
-        complete: () => console.info('complete')
-      }
-    );
+    this.username = this.loginService.getUsername();
+    console.log("HomeComponent ngOnInit");
   }
-
 }
