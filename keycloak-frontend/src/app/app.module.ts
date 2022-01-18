@@ -9,6 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { CoreModule } from '@core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,14 +23,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     CoreModule,
     HttpClientModule,
     OAuthModule.forRoot({
-      resourceServer: {
-        allowedUrls: [
-          'http://localhost:8081/api/test',
-          'http://localhost:8080/api/test',
-          'http://localhost:8080/foo'
-        ],
-        sendAccessToken: true
-      }
+      resourceServer: environment.authResourceServerConfig
     })
   ],
   providers: [],
