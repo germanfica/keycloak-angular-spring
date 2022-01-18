@@ -2,6 +2,7 @@ import { LoginService } from '@core/services/login.service';
 import { MessageService } from '@core/services/message.service';
 import { AuthConfig, OAuthService, NullValidationHandler } from 'angular-oauth2-oidc';
 import { Component } from '@angular/core';
+import { KeycloakService } from '@core/services/keycloak.service';
 
 @Component({
   selector: 'app-root',
@@ -16,35 +17,42 @@ export class AppComponent {
   isAdmin: boolean = false;
 
   constructor(
-    private oauthService: OAuthService,
     private messageService: MessageService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private keycloakService: KeycloakService
   ) {
-    this.configure();
+
+
+
+    // this.isLogged = this.keycloakService.isLogged;
+    //       this.isAdmin = this.keycloakService.isAdmin;
+    //       this.username = this.keycloakService.username;
+    //       this.messageService.sendMessage(this.keycloakService.username);
+
+    // this.keycloakService.getIsLogged().subscribe((data) => {
+    //   this.isLogged = data;
+    // });
+
+    // this.keycloakService.getIsAdmin().subscribe((data) => {
+    //   this.isAdmin = data;
+    // });
+
+    // this.keycloakService.getUsername().subscribe((data) => {
+    //   this.username = data;
+    //   console.log(data);
+    // });
+
+    this.keycloakService.getIsConfigureReady().subscribe((data) => {
+      if (data) {
+        this.isLogged = this.loginService.getIsLogged();
+        this.isAdmin = this.loginService.getIsAdmin();
+        this.username = this.loginService.getUsername();
+        this.messageService.sendMessage(this.loginService.getUsername());
+      }
+    });
+
   }
 
-  authConfig: AuthConfig = {
-    issuer: 'http://localhost:8180/auth/realms/myrealm',
-    redirectUri: window.location.origin,
-    clientId: 'frontend-client',
-    responseType: 'code',
-    scope: 'openid profile email offline_access',
-    showDebugInformation: true,
-  };
 
-  configure(): void {
-    this.oauthService.configure(this.authConfig);
-    this.oauthService.tokenValidationHandler = new NullValidationHandler();
-    this.oauthService.setupAutomaticSilentRefresh();
-    this.oauthService.loadDiscoveryDocument().then(() => this.oauthService.tryLogin())
-      .then(() => {
-        if (this.oauthService.getIdentityClaims()) {
-          this.isLogged = this.loginService.getIsLogged();
-          this.isAdmin = this.loginService.getIsAdmin();
-          this.username = this.loginService.getUsername();
-          this.messageService.sendMessage(this.loginService.getUsername());
-        }
-      });
-  }
 
 }
