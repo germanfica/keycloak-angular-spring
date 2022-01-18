@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AuthConfig, NullValidationHandler, OAuthService, OAuthSuccessEvent } from 'angular-oauth2-oidc';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KeycloakService {
+  private isConfigureReadySubject: Subject<boolean> = new Subject();
   private authConfig: AuthConfig = {
     issuer: 'http://localhost:8180/auth/realms/myrealm',
     redirectUri: window.location.origin,
@@ -26,7 +28,18 @@ export class KeycloakService {
     this.oauthService.configure(this.authConfig);
     this.oauthService.tokenValidationHandler = new NullValidationHandler();
     this.oauthService.setupAutomaticSilentRefresh();
-    this.oauthService.loadDiscoveryDocument().then(() => this.oauthService.tryLogin());
+    this.oauthService.loadDiscoveryDocument().then(() => this.oauthService.tryLogin())
+      .then(() => this.oauthService.getIdentityClaims() ? true : false)
+      .then((isReady) => this.isConfigureReadySubject.next(isReady));
+  }
+
+  /**
+   * Check if `configure()` method is ready.
+   * 
+   * @returns {Observable} An `Observable` if the `KeycloakService` was successfully configured.
+   */
+  isConfigureReady(): Observable<boolean> {
+    return this.isConfigureReadySubject.asObservable();
   }
 
   public login(): void {
