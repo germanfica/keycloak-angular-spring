@@ -1,20 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AuthConfig, NullValidationHandler, OAuthService, OAuthSuccessEvent } from 'angular-oauth2-oidc';
 import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KeycloakService {
   private afterTryLoginSubject: Subject<boolean> = new Subject();
-  private authConfig: AuthConfig = {
-    issuer: 'http://localhost:8180/auth/realms/myrealm',
-    redirectUri: window.location.origin,
-    clientId: 'frontend-client',
-    responseType: 'code',
-    scope: 'openid profile email offline_access',
-    showDebugInformation: true,
-  };
+  private authConfig: AuthConfig = environment.authConfig;
 
   constructor(private oauthService: OAuthService) {
     this.configure();
