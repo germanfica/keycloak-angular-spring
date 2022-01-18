@@ -27,32 +27,28 @@ export class KeycloakService {
     private loginService: LoginService
   ) {
     // https://stackoverflow.com/questions/63444340/promisse-in-constructor-dont-finish-before-method-runs-in-angular-10
-    this.configure().then(
-      (data) => {
-        if (data) {
-          this.isLoggedSubject.next(this.loginService.getIsLogged());
-          this.isAdminSubject.next(this.loginService.getIsAdmin());
-          this.usernameSubject.next(this.loginService.getUsername());
-          this.messageService.sendMessage(this.loginService.getUsername());
-          this.isReadySubject.next(data);
-        }
-      }
-    );
+    this.configure();
   }
 
-  private configure(): Promise<boolean> {
+  /**
+   * This method takes care configure OAuth2 login to work with Keycloak.
+   */
+  private configure(): void {
     this.oauthService.configure(this.authConfig);
     this.oauthService.tokenValidationHandler = new NullValidationHandler();
     this.oauthService.setupAutomaticSilentRefresh();
-    return this.oauthService.loadDiscoveryDocument()
+    this.oauthService.loadDiscoveryDocument()
       .then(() => this.oauthService.tryLogin())
-      .then(() => this.oauthService.getIdentityClaims() ? true : false);
-    // .then((data) => console.log(JSON.stringify(this.oauthService.getIdentityClaims())));
-
-    // this.isLogged = this.loginService.getIsLogged();
-    // this.isAdmin = this.loginService.getIsAdmin();
-    // this.username = this.loginService.getUsername();
-    // this.messageService.sendMessage(this.loginService.getUsername());
+      .then(() => this.oauthService.getIdentityClaims() ? true : false)
+      .then((isReady) => {
+        if (isReady) {
+          this.isLoggedSubject.next(this.loginService.getIsLogged()); // get is logged
+          this.isAdminSubject.next(this.loginService.getIsAdmin()); // get is admin
+          this.usernameSubject.next(this.loginService.getUsername()); // get username
+          this.messageService.sendMessage(this.loginService.getUsername()); // send a message
+          this.isReadySubject.next(isReady); // notifies that the configuration is ready
+        }
+      });
   }
 
   getUsername(): Observable<string> {
@@ -72,7 +68,7 @@ export class KeycloakService {
    * 
    * @returns {Observable} An `Observable` if the `KeycloakService` was successfully configured.
    */
-  getIsConfigureReady(): Observable<boolean> {
+  isConfigureReady(): Observable<boolean> {
     return this.isReadySubject.asObservable();
   }
 
