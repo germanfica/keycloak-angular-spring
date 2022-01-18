@@ -22,9 +22,11 @@ export class MenuComponent implements OnInit {
   constructor(private keycloakService: KeycloakService) { }
 
   ngOnInit(): void {
-    this.isLogged = this.keycloakService.getIsLogged();
-    this.isAdmin = this.keycloakService.getIsAdmin();
-    this.username = this.keycloakService.getUsername();
+    this.keycloakService.isConfigureReady().subscribe(() => {
+      this.isLogged = this.keycloakService.getIsLogged();
+      this.isAdmin = this.keycloakService.getIsAdmin();
+      this.username = this.keycloakService.getUsername();
+    });
 
     console.log("MenuComponent ngOnInit");
   }
