@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private keycloakService: KeycloakService) { }
 
   ngOnInit(): void {
-    this.keycloakService.isConfigureReady().subscribe(() => this.username = this.keycloakService.getUsername()); // After KeycloakService configure()
+    this.keycloakService.afterTryLogin().subscribe(() => this.username = this.keycloakService.getUsername()); // After KeycloakService configure()
     this.username = this.keycloakService.getUsername(); // Before KeycloakService configure()
     console.log("HomeComponent ngOnInit");
   }

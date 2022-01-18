@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class KeycloakService {
-  private isConfigureReadySubject: Subject<boolean> = new Subject();
+  private afterTryLoginSubject: Subject<boolean> = new Subject();
   private authConfig: AuthConfig = {
     issuer: 'http://localhost:8180/auth/realms/myrealm',
     redirectUri: window.location.origin,
@@ -28,18 +28,18 @@ export class KeycloakService {
     this.oauthService.configure(this.authConfig);
     this.oauthService.tokenValidationHandler = new NullValidationHandler();
     this.oauthService.setupAutomaticSilentRefresh();
-    this.oauthService.loadDiscoveryDocument().then(() => this.oauthService.tryLogin())
-      .then(() => this.oauthService.getIdentityClaims() ? true : false)
-      .then((isReady) => this.isConfigureReadySubject.next(isReady));
+    this.oauthService.loadDiscoveryDocument()
+      .then(() => this.oauthService.tryLogin())
+      .then((data: boolean) => this.afterTryLoginSubject.next(data));
   }
 
   /**
-   * Check if `configure()` method is ready.
+   * Checks whether there are tokens in the hash fragment.
    * 
-   * @returns {Observable} An `Observable` if the `KeycloakService` was successfully configured.
+   * @returns {Observable} An `Observable` with result `true` if there are tokens.
    */
-  isConfigureReady(): Observable<boolean> {
-    return this.isConfigureReadySubject.asObservable();
+  afterTryLogin(): Observable<boolean> {
+    return this.afterTryLoginSubject.asObservable();
   }
 
   public login(): void {
