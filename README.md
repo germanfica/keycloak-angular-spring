@@ -61,81 +61,48 @@ keycloak.ssl-required = external
 keycloak.resource = backend-client
 keycloak.use-resource-role-mappings = true
 keycloak.bearer-only = true
+
+# keycloak master realm
+keycloak.master.realm = master
+keycloak.master.username = admin
+keycloak.master.password = admin
+keycloak.master.clientId = admin-cli
 ```
 
 ## Angular basic settings
 
-Open `src/app/app.module.ts`
+Open `src/environments/environment.ts`
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-import { OAuthModule } from 'angular-oauth2-oidc';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    OAuthModule.forRoot({
-      resourceServer: {
-        allowedUrls: [
-          'http://localhost:8080/foo'
-        ],
-        sendAccessToken: true
-      }
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-
-The `http://localhost:8080/foo` URL corresponds to the backend `FooController` in our Spring Boot project.
-
-Open `src/app/app.component.ts`
-
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-})
-export class AppComponent {
-  title = 'keycloak-client';
-  
-  authConfig: AuthConfig = {
+export const environment = {
+  production: false,
+  foo_api: 'http://localhost:8080/foo/',
+  user_api: 'http://localhost:8080/user/',
+  authResourceServerConfig: {
+    allowedUrls: [
+      'http://localhost:8080/foo'
+    ],
+    sendAccessToken: true
+  },
+  authConfig: {
     issuer: 'http://localhost:8180/auth/realms/myrealm',
     redirectUri: window.location.origin,
     clientId: 'frontend-client',
     responseType: 'code',
     scope: 'openid profile email offline_access',
     showDebugInformation: true,
-  };
-  
-  constructor(private oauthService: OAuthService) {
-    this.configure();
   }
-  
-  configure(): void {
-    this.oauthService.configure(this.authConfig);
-    this.oauthService.tokenValidationHandler = new NullValidationHandler();
-    this.oauthService.setupAutomaticSilentRefresh();
-    this.oauthService.loadDiscoveryDocument().then(() => this.oauthService.tryLogin())
-      .then(() => {
-        if (this.oauthService.getIdentityClaims()) { }
-      });
-  }
-}
+};
+```
+
+The `http://localhost:8080/foo` URL corresponds to the backend `FooController` in our Spring Boot project.
+
+Import the `OAuthModule` to `src/app/app.module.ts`
+
+```typescript
+OAuthModule.forRoot({
+  resourceServer: environment.authResourceServerConfig
+})
 ```
 
 ## ⚙️ Keycloak basic settings
