@@ -26,16 +26,16 @@ public class KeycloakService {
     @Value("${keycloak.realm}")
     private String realm;
 
-    @Value("${keycloak.master.realm}")
+    @Value("${app.master.realm}")
     private String master_realm;
 
-    @Value("${keycloak.master.username}")
+    @Value("${app.master.username}")
     private String master_username;
 
-    @Value("${keycloak.master.password}")
+    @Value("${app.master.password}")
     private String master_admin;
 
-    @Value("${keycloak.master.clientId}")
+    @Value("${app.master.clientId}")
     private String master_clientId;
 
     public Object[] createUser(User user){
