@@ -63,10 +63,10 @@ keycloak.use-resource-role-mappings = true
 keycloak.bearer-only = true
 
 # keycloak master realm
-keycloak.master.realm = master
-keycloak.master.username = admin
-keycloak.master.password = admin
-keycloak.master.clientId = admin-cli
+app.master.realm = master
+app.master.username = admin
+app.master.password = admin
+app.master.clientId = admin-cli
 ```
 
 ## Angular basic settings
