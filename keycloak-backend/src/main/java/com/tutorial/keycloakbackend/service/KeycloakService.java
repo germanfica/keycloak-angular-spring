@@ -2,7 +2,7 @@ package com.tutorial.keycloakbackend.service;
 
 
 import com.tutorial.keycloakbackend.dto.ResponseMessage;
-import com.tutorial.keycloakbackend.model.User;
+import com.tutorial.keycloakbackend.dto.UserDataOnly;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
@@ -38,16 +38,16 @@ public class KeycloakService {
     @Value("${app.master.clientId}")
     private String master_clientId;
 
-    public Object[] createUser(User user){
+    public Object[] createUser(UserDataOnly userDataOnly){
         ResponseMessage message = new ResponseMessage();
         int statusId = 0;
          try {
              UsersResource usersResource = getUsersResource();
              UserRepresentation userRepresentation = new UserRepresentation();
-             userRepresentation.setUsername(user.getUsername());
-             userRepresentation.setEmail(user.getEmail());
-             userRepresentation.setFirstName(user.getFirstName());
-             userRepresentation.setLastName(user.getLastName());
+             userRepresentation.setUsername(userDataOnly.getUsername());
+             userRepresentation.setEmail(userDataOnly.getEmail());
+             userRepresentation.setFirstName(userDataOnly.getFirstName());
+             userRepresentation.setLastName(userDataOnly.getLastName());
              userRepresentation.setEnabled(true);
 
              Response result = usersResource.create(userRepresentation);
@@ -59,7 +59,7 @@ public class KeycloakService {
                  CredentialRepresentation passwordCredential = new CredentialRepresentation();
                  passwordCredential.setTemporary(false);
                  passwordCredential.setType(CredentialRepresentation.PASSWORD);
-                 passwordCredential.setValue(user.getPassword());
+                 passwordCredential.setValue(userDataOnly.getPassword());
                  usersResource.get(userId).resetPassword(passwordCredential);
 
                  RealmResource realmResource = getRealmResource();

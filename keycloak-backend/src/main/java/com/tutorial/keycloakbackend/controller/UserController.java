@@ -1,11 +1,13 @@
 package com.tutorial.keycloakbackend.controller;
 
 import com.tutorial.keycloakbackend.dto.ResponseMessage;
-import com.tutorial.keycloakbackend.model.User;
+import com.tutorial.keycloakbackend.dto.UserDataOnly;
 import com.tutorial.keycloakbackend.service.KeycloakService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/user")
@@ -16,8 +18,8 @@ public class UserController {
     private KeycloakService keycloakService;
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseMessage> create(@RequestBody User user){
-        Object[] obj = keycloakService.createUser(user);
+    public ResponseEntity<ResponseMessage> create(@Valid @RequestBody UserDataOnly userDataOnly){
+        Object[] obj = keycloakService.createUser(userDataOnly);
         int status = (int) obj[0];
         ResponseMessage message = (ResponseMessage) obj[1];
         return ResponseEntity.status(status).body(message);
